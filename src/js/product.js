@@ -32,11 +32,10 @@ function getProductsData() {
 function addToCart(e) {
   const product = products.find((item) => item.Id === e.target.dataset.id);
   let currentItems = getLocalStorage('so-cart');
-  if (currentItems != null){
+  if (currentItems != null) {
     currentItems.push(product);
-  setLocalStorage('so-cart', currentItems);
-  }
-  else{
+    setLocalStorage('so-cart', currentItems);
+  } else {
     const productList = [product];
     setLocalStorage('so-cart', productList);
   }
