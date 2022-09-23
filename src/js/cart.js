@@ -1,10 +1,10 @@
-function getLocalStorage(key) {
-  return JSON.parse(localStorage.getItem(key));
+async function getLocalStorage(key) {
+  return JSON.parse(await localStorage.getItem(key));
 }
 
-function getCartContents() {
+async function getCartContents() {
   let markup = '';
-  const cartItems = getLocalStorage('so-cart');
+  const cartItems = await getLocalStorage('so-cart');
   const htmlItems = cartItems.map((item) => renderCartItem(item));
   document.querySelector('.product-list').innerHTML = htmlItems.join('');
   // document.querySelector(".product-list").innerHTML = renderCartItem(cartItems);
