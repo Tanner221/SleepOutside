@@ -1,3 +1,8 @@
+import ProductData from './productData.js';
+
+const dataSource = new ProductData('tents', '880RR');
+console.log(dataSource.getData());
+
 let products = [];
 function convertToJson(res) {
   if (res.ok) {
