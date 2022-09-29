@@ -1,8 +1,17 @@
 import ProductData from './productData.js';
 
-const dataSource = new ProductData('tents', '880RR');
-console.log(dataSource.getData());
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const id = urlParams.get('id');
+const category = urlParams.get('category');
+console.log(id);
+console.log(category);
 
+const dataSource = new ProductData(category, id);
+// console.log(dataSource.findProductById('880RR'));
+
+const product1 = dataSource.getProduct();
+console.log(product1);
 let products = [];
 function convertToJson(res) {
   if (res.ok) {
