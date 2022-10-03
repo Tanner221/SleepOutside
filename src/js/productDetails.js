@@ -18,7 +18,6 @@ export default class ProductDetails {
 
   async init() {
     this.product = await this.dataSource.getProduct();
-    console.log(this.product)
     this.renderProductDetails();
     // use our datasource to get the details for the current product. findProductById will return a promise! use await or .then() to process it
     // once we have the product details we can render out the HTML
@@ -29,7 +28,6 @@ export default class ProductDetails {
 
   renderProductDetails() {
     const src = this.product.Image;
-    console.log(src);
     document.getElementById('productImage').src = src;
     document.getElementById('productImage').alt = this.product.NameWithoutBrand;
     document.getElementById('productName').innerHTML = this.product.NameWithoutBrand;
