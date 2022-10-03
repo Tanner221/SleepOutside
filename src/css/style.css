@@ -146,9 +146,10 @@ button {
   margin: 0.5em 0;
 }
 
-.product-card__indicator {
+.product-card__price-container {
   display: flex;
   justify-content: space-between;
+  align-self: flex-start;
 }
 
 .product-card__discount {
