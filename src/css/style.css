@@ -146,6 +146,20 @@ button {
   margin: 0.5em 0;
 }
 
+.product-card__price-container {
+  display: flex;
+  justify-content: space-between;
+  align-self: flex-start;
+  align-items: baseline;
+}
+
+.product-card__discount {
+  padding: .3em .5em;
+  background-color: red;
+  color: white;
+  border-radius: 3px;
+}
+
 .card__brand {
   font-size: var(--small-font);
 }
@@ -219,6 +233,7 @@ footer {
   font-size: var(--small-font);
   padding: 1em;
 }
+<<<<<<< HEAD
 .shakeanimation {
      cartElement: ('shake');
     angle: 0;
@@ -235,4 +250,9 @@ footer {
   100% {
     transform: rotate((-15deg));
   }
+=======
+
+.cart-footer{
+  display: none;
+>>>>>>> 7febfe48c12bb77f8d7ca263865454b9783e61d2
 }
