@@ -146,6 +146,20 @@ button {
   margin: 0.5em 0;
 }
 
+.product-card__price-container {
+  display: flex;
+  justify-content: space-between;
+  align-self: flex-start;
+  align-items: baseline;
+}
+
+.product-card__discount {
+  padding: .3em .5em;
+  background-color: red;
+  color: white;
+  border-radius: 3px;
+}
+
 .card__brand {
   font-size: var(--small-font);
 }
