@@ -219,3 +219,20 @@ footer {
   font-size: var(--small-font);
   padding: 1em;
 }
+.shakeanimation {
+     cartElement: ('shake');
+    angle: 0;
+    setInterval:( ()  
+        angle = (angle + 2)
+        squareElement)style;
+    cancelAnimationFrame:id;
+    getCartContents: (0)
+    }
+@keyframes shake {
+  50%{
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate((-15deg));
+  }
+}
