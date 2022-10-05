@@ -233,7 +233,10 @@ footer {
   font-size: var(--small-font);
   padding: 1em;
 }
-<<<<<<< HEAD
+
+.cart-footer{
+  display: none;
+}
 .shakeanimation {
      cartElement: ('shake');
     angle: 0;
@@ -250,9 +253,4 @@ footer {
   100% {
     transform: rotate((-15deg));
   }
-=======
-
-.cart-footer{
-  display: none;
->>>>>>> 7febfe48c12bb77f8d7ca263865454b9783e61d2
 }

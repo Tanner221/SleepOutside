@@ -2,12 +2,11 @@ async function getLocalStorage(key) {
   return JSON.parse(await localStorage.getItem(key));
 }
 
-<<<<<<< HEAD
+ HEAD
 async function getCartContents() {
   const cartItems = getLocalStorage('so-cart');
   const htmlItems = cartItems.map((item) => renderCartItem(item));
   document.querySelector('.product-list').innerHTML = htmlItems.join('');
-=======
 function displayTotal(total) {
   //display surrounding div (will include checkout button)
   const element = document.querySelector('.cart-footer');
@@ -26,7 +25,6 @@ async function getCartContents() {
     const htmlItems = cartItems.map((item) => renderCartItem(item));
     document.querySelector('.product-list').innerHTML = htmlItems.join('');
   }
->>>>>>> 7febfe48c12bb77f8d7ca263865454b9783e61d2
   // document.querySelector(".product-list").innerHTML = renderCartItem(cartItems);
 }
 
@@ -46,9 +44,8 @@ function renderCartItem(item) {
   <p class="cart-card__price">$${item.FinalPrice}</p>
 </li>`;
   return newItem;
-<<<<<<< HEAD
 }
-=======
+
 }
 // const cartElement = document.getElementById('cart');
 // let angle = 0;
@@ -59,4 +56,3 @@ function renderCartItem(item) {
 // }, 1000/60);
 // cancelAnimationFrame(id);
 getCartContents();
->>>>>>> 7febfe48c12bb77f8d7ca263865454b9783e61d2
