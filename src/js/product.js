@@ -1,5 +1,6 @@
 import ProductData from './productData.js';
 import ProductDetails from './productDetails.js';
+import {shake} from './utils.js';
 //import { getParam } from './utils.js';
 
 const queryString = window.location.search;
@@ -10,7 +11,7 @@ const productId = urlParams.get('id');
 const dataSource = new ProductData(category, productId);
 const product = new ProductDetails(productId, dataSource);
 product.init();
-
+shake();
 
 // const dataSource = new ProductData(category, id);
 
@@ -63,3 +64,15 @@ function getProductsData() {
 getProductsData();
 // add listener to Add to Cart button
 // document.getElementById('addToCart').addEventListener('click', addToCart);
+
+//function shake(cart){
+//  const cartElement = document.getElementById('cart');
+//    let angle = 0;
+
+//      setInterval( () => {
+//      angle = (angle + 2) % 360;
+//      squareElement.style.transform = `rotate($15deg)`
+//      squareElement.style.transform = `rotate($-15deg)`
+//    }, 1000/60);
+//cancelAnimationFrame(id);
+//}

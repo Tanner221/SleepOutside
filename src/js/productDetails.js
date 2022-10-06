@@ -49,6 +49,10 @@ export default class ProductDetails {
       const productList = [this.product];
       setLocalStorage('so-cart', productList);
     }
+    const cart = document.querySelector('.cart');
+    cart.classList.add('shakeanimation');
+    console.log(cart);
+
   }
 
 }

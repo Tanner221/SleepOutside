@@ -100,6 +100,7 @@ button {
   padding-top: 1em;
   position: relative;
   text-align: center;
+  
 }
 
 .cart svg {
@@ -238,19 +239,14 @@ footer {
   display: none;
 }
 .shakeanimation {
-     cartElement: ('shake');
-    angle: 0;
-    setInterval:( ()  
-        angle = (angle + 2)
-        squareElement)style;
-    cancelAnimationFrame:id;
-    getCartContents: (0)
+   animation: shake 5s ease-out;
+
     }
 @keyframes shake {
   50%{
     transform: rotate(15deg);
   }
   100% {
-    transform: rotate((-15deg));
+    transform: rotate(-15deg);
   }
 }
