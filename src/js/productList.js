@@ -29,7 +29,8 @@ export default class ProductList{
     image.alt += product.NameWithoutBrand;
     clone.querySelector('h3').innerHTML = product.Brand.Name;
     clone.querySelector('h2').innerHTML = product.NameWithoutBrand;
-    clone.querySelector('p').innerHTML += product.FinalPrice;
+    clone.querySelector('.product-card__price').innerHTML += product.FinalPrice;
+    clone.querySelector('.product-card__discount').innerHTML += `${(product.SuggestedRetailPrice - product.FinalPrice).toFixed(2)} OFF`;
     clone.querySelector('a').href += `${product.Id}&category=tents`
   }
 }

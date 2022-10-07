@@ -158,6 +158,7 @@ button {
   background-color: red;
   color: white;
   border-radius: 3px;
+  font-size: .8em;
 }
 
 .card__brand {
