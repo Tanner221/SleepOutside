@@ -27,3 +27,12 @@ export function setClick(selector, callback) {
 //   const urlParams = new URLSearchParams(queryString);
 //   return urlParams.get(parameter);
 // }
+
+export function shake(cart){
+
+ const cartElement = document.querySelector('.cart');
+ const cartItems = getLocalStorage('so-cart');
+ if (cartItems != null){
+ cartElement.classList.add('shakeanimation')
+}
+}

@@ -2,6 +2,11 @@ async function getLocalStorage(key) {
   return JSON.parse(await localStorage.getItem(key));
 }
 
+ HEAD
+async function getCartContents() {
+  const cartItems = getLocalStorage('so-cart');
+  const htmlItems = cartItems.map((item) => renderCartItem(item));
+  document.querySelector('.product-list').innerHTML = htmlItems.join('');
 function displayTotal(total) {
   //display surrounding div (will include checkout button)
   const element = document.querySelector('.cart-footer');
@@ -39,6 +44,8 @@ function renderCartItem(item) {
   <p class="cart-card__price">$${item.FinalPrice}</p>
 </li>`;
   return newItem;
+}
+
 }
 // const cartElement = document.getElementById('cart');
 // let angle = 0;

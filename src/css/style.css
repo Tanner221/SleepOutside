@@ -100,6 +100,7 @@ button {
   padding-top: 1em;
   position: relative;
   text-align: center;
+  
 }
 
 .cart svg {
@@ -237,4 +238,22 @@ footer {
 
 .cart-footer{
   display: none;
+}
+.shakeanimation {
+   animation: shake 5s ease-out;
+
+    }
+@keyframes shake {
+  25%{
+    transform: rotate(15deg);
+  }
+  50%{
+    transform: rotate(-15deg);
+  }
+  75%{
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(-15deg);
+  }
 }
