@@ -36,3 +36,41 @@ export function shake(cart){
  cartElement.classList.add('shakeanimation')
 }
 }
+
+
+export function renderWithTemplate(data, template, parent, callback){
+  const clone = template.content.cloneNode(true);
+  //prep template
+  if(callback){
+    clone = callback(clone, data)
+    }
+  // insert the actual details of the current product into the template
+  parent.appendChild(clone);
+  }
+
+  function convertToText(res) {
+    if (res.ok) {
+      return res.text();
+    } else {
+      throw new Error('Bad Response');
+    }
+}
+export async function loadTemplate(path){
+  const html = await fetch(path).then(convertToText);
+  const template = document.createElement('template');
+  template.innerHTML = html;
+  return template;
+}
+export default async function loadHeaderFooter(){
+  const loadHead = await loadTemplate('/partials/header.html');
+  const loadFoot = await loadTemplate('/partials/footer.html');
+  const head = document.getElementById('main-header');
+  const foot = document.getElementById('main-footer');
+
+  console.log(loadHead);
+
+  renderWithTemplate({}, loadHead, head);
+  renderWithTemplate({}, loadFoot, foot);
+}
+  
+
