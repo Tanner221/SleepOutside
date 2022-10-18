@@ -60,7 +60,6 @@ function addCartListener(element){
         const index = cart.indexOf(CartItem)
         if(index == ItemIndex){
           cart.splice(index, 1);
-          console.log(cart)
           setLocalStorage('so-cart', cart)
           document.location.reload()
         }

@@ -28,7 +28,7 @@ export function setClick(selector, callback) {
 //   return urlParams.get(parameter);
 // }
 
-export function shake(cart){
+export function shake(){
 
  const cartElement = document.querySelector('.cart');
  const cartItems = getLocalStorage('so-cart');
