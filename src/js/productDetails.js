@@ -32,6 +32,7 @@ export default class ProductDetails {
     document.getElementById('productImage').alt = this.product.NameWithoutBrand;
     document.getElementById('productName').innerHTML = this.product.NameWithoutBrand;
     document.getElementById('productPrice').innerHTML = '$' + this.product.FinalPrice;
+    document.getElementById('productDiscount').innerHTML = `$ ${(this.product.SuggestedRetailPrice - this.product.FinalPrice).toFixed(2)} OFF`;
     const colors = this.product.Colors.map(item => 
       item.ColorName
     )

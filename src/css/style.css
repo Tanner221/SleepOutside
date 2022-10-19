@@ -159,6 +159,7 @@ button {
   background-color: red;
   color: white;
   border-radius: 3px;
+  font-size: .8em;
 }
 
 .card__brand {
@@ -187,6 +188,30 @@ button {
   font-size: var(--small-font);
   /* max-height: 120px; */
   align-items: center;
+  width: 75%;
+}
+
+.cart_remove{
+  grid-row: 1;
+  grid-column: 3;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+
+.cart_remove > span{
+  color: white;
+  font-size: small;
+}
+
+.fa-trash{
+  color: white;
+}
+
+.button {
+  background-color: #9c1111;
+  color: #f7f4f4;
+  padding: 5px 10px 5px 10px;
 }
 
 .cart-card__image {
@@ -207,12 +232,12 @@ button {
 }
 
 .cart-card__quantity {
-  grid-row: 1;
+  grid-row:2;
   grid-column: 3;
 }
 
 .cart-card__price {
-  grid-row: 2;
+  grid-row: 3;
   grid-column: 3;
 }
 
