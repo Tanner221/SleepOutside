@@ -33,6 +33,7 @@ export function shake(cart){
  const cartElement = document.querySelector('.cart');
  const cartItems = getLocalStorage('so-cart');
  if (cartItems != null){
- cartElement.classList.add('shakeanimation')
+ cartElement.classList.add('shakeanimation');
+document.querySelector('.badge').innerHTML = cartItems.length
 }
 }

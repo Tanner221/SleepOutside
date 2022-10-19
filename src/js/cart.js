@@ -56,3 +56,4 @@ function renderCartItem(item) {
 // }, 1000/60);
 // cancelAnimationFrame(id);
 getCartContents();
+

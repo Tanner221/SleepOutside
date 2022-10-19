@@ -240,8 +240,8 @@ footer {
 }
 .shakeanimation {
    animation: shake 5s ease-out;
-
-    }
+   display: badge;
+}
 @keyframes shake {
   25%{
     transform: rotate(15deg);
@@ -255,4 +255,16 @@ footer {
   100% {
     transform: rotate(-15deg);
   }
+}
+.badge::after.shakeanimation {
+  content:attr(value);
+  font-size:20px;
+  color: #fff;
+  background: orange;
+  border-radius:50%;
+  padding: 0 5px;
+  position:relative;
+  left:8px;
+  top:-100px;
+  opacity:0.9;
 }
