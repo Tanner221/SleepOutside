@@ -1,12 +1,12 @@
-import ProductData from './productData.js';
-import ProductDetails from './productDetails.js';
-import {shake} from './utils.js';
+import ProductData from "./productData.js";
+import ProductDetails from "./productDetails.js";
+import { shake } from "./utils.js";
 //import { getParam } from './utils.js';
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const category = urlParams.get('category');
-const productId = urlParams.get('id');
+const category = urlParams.get("category");
+const productId = urlParams.get("id");
 
 const dataSource = new ProductData(category, productId);
 const product = new ProductDetails(productId, dataSource);
@@ -23,7 +23,7 @@ function convertToJson(res) {
   if (res.ok) {
     return res.json();
   } else {
-    throw new Error('Bad Response');
+    throw new Error("Bad Response");
   }
 }
 
@@ -37,7 +37,7 @@ export default function getLocalStorage(key) {
 
 // get tents data
 function getProductsData() {
-  fetch('../json/tents.json')
+  fetch("../json/tents.json")
     .then(convertToJson)
     .then((data) => {
       products = data;

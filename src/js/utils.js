@@ -10,7 +10,7 @@ export function getLocalStorage(key) {
   return JSON.parse(localStorage.getItem(key));
 }
 // save data to local storage
-export default function setLocalStorage(key, data) {
+export function setLocalStorage(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
 }
 // set a listener for both touchend and click
@@ -37,30 +37,31 @@ export function shake(){
 document.querySelector('.badge').innerHTML = cartItems.length
 }
 }
-export function renderWithTemplate(data, template, parent, callback){
-  const clone = template.content.cloneNode(true);
+
+export function renderWithTemplate(data, template, parent, callback) {
+  let clone = template.content.cloneNode(true);
   //prep template
-  if(callback){
-    clone = callback(clone, data)
-    }
+  if (callback) {
+    clone = callback(clone, data);
+  }
   // insert the actual details of the current product into the template
   parent.appendChild(clone);
-  }
-
-  function convertToText(res) {
-    if (res.ok) {
-      return res.text();
-    } else {
-      throw new Error('Bad Response');
-    }
 }
-export async function loadTemplate(path){
+
+function convertToText(res) {
+  if (res.ok) {
+    return res.text();
+  } else {
+    throw new Error('Bad Response');
+  }
+}
+export async function loadTemplate(path) {
   const html = await fetch(path).then(convertToText);
   const template = document.createElement('template');
   template.innerHTML = html;
   return template;
 }
-export default async function loadHeaderFooter(){
+export default async function loadHeaderFooter() {
   const loadHead = await loadTemplate('/partials/header.html');
   const loadFoot = await loadTemplate('/partials/footer.html');
   const head = document.getElementById('main-header');
