@@ -10,7 +10,7 @@ export function getLocalStorage(key) {
   return JSON.parse(localStorage.getItem(key));
 }
 // save data to local storage
-export default function setLocalStorage(key, data) {
+export function setLocalStorage(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
 }
 // set a listener for both touchend and click
@@ -28,40 +28,38 @@ export function setClick(selector, callback) {
 //   return urlParams.get(parameter);
 // }
 
-export function shake(){
-
- const cartElement = document.querySelector('.cart');
- const cartItems = getLocalStorage('so-cart');
- if (cartItems != null){
- cartElement.classList.add('shakeanimation')
+export function shake() {
+  const cartElement = document.querySelector('.cart');
+  const cartItems = getLocalStorage('so-cart');
+  if (cartItems != null) {
+    cartElement.classList.add('shakeanimation');
+  }
 }
-}
 
-
-export function renderWithTemplate(data, template, parent, callback){
-  const clone = template.content.cloneNode(true);
+export function renderWithTemplate(data, template, parent, callback) {
+  let clone = template.content.cloneNode(true);
   //prep template
-  if(callback){
-    clone = callback(clone, data)
-    }
+  if (callback) {
+    clone = callback(clone, data);
+  }
   // insert the actual details of the current product into the template
   parent.appendChild(clone);
-  }
-
-  function convertToText(res) {
-    if (res.ok) {
-      return res.text();
-    } else {
-      throw new Error('Bad Response');
-    }
 }
-export async function loadTemplate(path){
+
+function convertToText(res) {
+  if (res.ok) {
+    return res.text();
+  } else {
+    throw new Error('Bad Response');
+  }
+}
+export async function loadTemplate(path) {
   const html = await fetch(path).then(convertToText);
   const template = document.createElement('template');
   template.innerHTML = html;
   return template;
 }
-export default async function loadHeaderFooter(){
+export default async function loadHeaderFooter() {
   const loadHead = await loadTemplate('/partials/header.html');
   const loadFoot = await loadTemplate('/partials/footer.html');
   const head = document.getElementById('main-header');
@@ -72,5 +70,3 @@ export default async function loadHeaderFooter(){
   renderWithTemplate({}, loadHead, head);
   renderWithTemplate({}, loadFoot, foot);
 }
-  
-
