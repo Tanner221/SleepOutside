@@ -14,13 +14,14 @@ export default class ProductData {
     this.category = category;
   }
 
-  async getData(category) {
-    return fetch(baseURL + `products/search/${category}`)
+  async getData() {
+    return fetch(baseURL + `products/search/${this.category}`)
       .then(convertToJson).then((data) => data.Result);
   }
 
   async getProduct() {
-    const result = await this.getData(this.category);
-    return result.find((item) => item.Id === this.id);
+    return await fetch(baseURL + `product/${this.id}`)
+      .then(convertToJson).then((data) => data.Result);
   }
+
 }

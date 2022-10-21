@@ -7,6 +7,7 @@ export default class ProductList {
 
   async init() {
     const productList = await this.dataSource.getData(this.category);
+    document.getElementById('page-title').innerHTML = `Top Products: ${this.category.charAt(0).toUpperCase() + this.category.slice(1)}`;
     this.renderList(productList);
   }
 
@@ -25,7 +26,7 @@ export default class ProductList {
     console.log(product);
     console.log(clone);
     const image = clone.querySelector("img");
-    image.src = product.Image;
+    image.src = product.Images.PrimaryMedium;
     image.alt += product.NameWithoutBrand;
     clone.querySelector("h3").innerHTML = product.Brand.Name;
     clone.querySelector("h2").innerHTML = product.NameWithoutBrand;
