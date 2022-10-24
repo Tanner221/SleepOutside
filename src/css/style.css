@@ -280,6 +280,9 @@ footer {
     transform: rotate(-15deg);
   }
 }
+.badge:before.shakeanimation{
+  display:none;
+}
 .badge:after.shakeanimation {
   content:attr(value);
   font-size:20px;

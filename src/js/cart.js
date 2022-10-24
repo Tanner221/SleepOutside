@@ -71,4 +71,3 @@ function addCartListener(element) {
 }
 
 getCartContents();
->>>>>>> 4b3348d738d4308e5ea61886820628c514e95114
