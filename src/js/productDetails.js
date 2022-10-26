@@ -28,7 +28,7 @@ export default class ProductDetails {
   }
 
   renderProductDetails() {
-    const src = this.product.Image;
+    const src = this.product.Images.PrimaryLarge;
     document.getElementById("productImage").src = src;
     document.getElementById("productImage").alt = this.product.NameWithoutBrand;
     document.getElementById(
