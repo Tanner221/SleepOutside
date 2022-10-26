@@ -280,6 +280,7 @@ footer {
     transform: rotate(-15deg);
   }
 }
+<<<<<<< HEAD
 .badge:before.shakeanimation{
   display:none;
 }
@@ -295,3 +296,14 @@ footer {
   top:-100px;
   opacity:0.9;
 }
+=======
+
+#product-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+#product-grid > img {
+  width: 100%;
+  height: auto;
+}
+>>>>>>> 4e77eefb9060604c136a3b8afc6f6a2a96e4eb26
