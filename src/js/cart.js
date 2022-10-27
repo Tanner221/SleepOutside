@@ -2,7 +2,7 @@ function setLocalStorage(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
 }
 
-async function getLocalStorage(key) {
+export default async function getLocalStorage(key) {
   return JSON.parse(await localStorage.getItem(key));
 }
 
