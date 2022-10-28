@@ -12,7 +12,7 @@ export default class ProductList {
   }
 
   renderList(productList) {
-    const template = document.getElementById("product-card-template");
+    const template = document.getElementById('product-card-template');
     productList.forEach((product) => {
       const clone = template.content.cloneNode(true);
       //prep template
@@ -25,15 +25,15 @@ export default class ProductList {
   prepareTemplate(clone, product) {
     console.log(product);
     console.log(clone);
-    const image = clone.querySelector("img");
+    const image = clone.querySelector('img');
     image.src = product.Images.PrimaryMedium;
     image.alt += product.NameWithoutBrand;
-    clone.querySelector("h3").innerHTML = product.Brand.Name;
-    clone.querySelector("h2").innerHTML = product.NameWithoutBrand;
-    clone.querySelector(".product-card__price").innerHTML += product.FinalPrice;
-    clone.querySelector(".product-card__discount").innerHTML += `${(
+    clone.querySelector('h3').innerHTML = product.Brand.Name;
+    clone.querySelector('h2').innerHTML = product.NameWithoutBrand;
+    clone.querySelector('.product-card__price').innerHTML += product.FinalPrice;
+    clone.querySelector('.product-card__discount').innerHTML += `${(
       product.SuggestedRetailPrice - product.FinalPrice
     ).toFixed(2)} OFF`;
-    clone.querySelector("a").href += `${product.Id}&category=tents`;
+    clone.querySelector('a').href += `${product.Id}&category=tents`;
   }
 }

@@ -12,45 +12,41 @@
     <main class="divider">
       <section class="products">
         <h2>Checkout</h2>
-        <form action="">
+        <form name="checkout">
           <fieldset class="formFieldset">
             <legend>Shipping</legend>
-            <label for="FistName">First Name</label>
-            <input type="text" name="FirstName" required />
-            <label for="LastName">Last Name</label>
-            <input type="text" name="LastName" required />
-            <label for="Street">Street</label>
-            <input type="text" name="Street" required />
-            <label for="City">City</label>
-            <input type="text" name="City" required />
-            <label for="State">State</label>
-            <input type="text" name="State" required />
-            <label for="ZipCode">Zip</label>
-            <input type="text" name="ZipCode" required />
+            <label for="fname">First Name</label>
+            <input type="text" name="fname" required />
+            <label for="lname">Last Name</label>
+            <input type="text" name="lname" required />
+            <label for="street">Street</label>
+            <input type="text" name="street" required />
+            <label for="city">City</label>
+            <input type="text" name="city" required />
+            <label for="state">State</label>
+            <input type="text" name="state" required />
+            <label for="zip">Zip</label>
+            <input type="text" name="zip" required />
           </fieldset>
           <fieldset class="formFieldset" id="payment">
             <legend>Payment</legend>
-            <label for="CardNumber">Card Number</label>
-            <input type="text" name="CardNumber" required />
-            <label for="Expiration">Expiration</label>
-            <input type="text" name="Expiration" required />
-            <label for="SecurityCode">Security Code</label>
-            <input type="text" name="SecurityCode" required />
+            <label for="cardNumber">Card Number</label>
+            <input type="text" name="cardNumber" required />
+            <label for="expiration">Expiration</label>
+            <input type="text" name="expiration" required />
+            <label for="code">Security Code</label>
+            <input type="text" name="code" required />
           </fieldset>
           <fieldset class="formFieldset">
             <legend>Order Summary</legend>
-            <div>
-              <p>Item Subtotal: </p>
-              <p>Shipping Estimate: </p>
-              <p>Tax: </p>
-              <p>Order Total: </p>
+            <div id="OrderSummary">
+              <!-- Add content here -->
             </div>
           </fieldset>
-          <button type="submit">Place Order</button>
+          <button id="submitOrder" type="submit">Place Order</button>
         </form>
       </section>
     </main>
     <footer>&copy;NOT a real business</footer>
-    <script src="js/cart.js"></script>
   </body>
 </html>

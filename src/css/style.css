@@ -304,3 +304,6 @@ form{
 button{
   margin-top: 15px;
 }
+.right-align{
+  float: right;
+}
