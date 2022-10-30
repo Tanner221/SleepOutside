@@ -288,3 +288,21 @@ footer {
   width: 100%;
   height: auto;
 }
+
+.sub-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-buttons {
+  display: flex;
+}
+
+.filter-button {
+  background-color: white;
+  border: grey solid 1px;
+  border-radius: 3px;
+  color: blue;
+  font-size: .7em;
+  margin-right: 5px;
+}
