@@ -28,12 +28,14 @@ export function getParam(parameter){
   return urlParams.get(parameter);
 }
 
-export function shake() {
-  const cartElement = document.querySelector('.cart');
-  const cartItems = getLocalStorage('so-cart');
-  if (cartItems != null) {
-    cartElement.classList.add('shakeanimation');
-  }
+export function shake(){
+
+ const cartElement = document.querySelector('.cart');
+ const cartItems = getLocalStorage('so-cart');
+ if (cartItems != null){
+ cartElement.classList.add('shakeanimation');
+document.querySelector('.badge').innerHTML = cartItems.length
+}
 }
 
 export function renderWithTemplate(data, template, parent, callback) {

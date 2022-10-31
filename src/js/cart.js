@@ -50,6 +50,7 @@ function renderCartItem(item) {
 </li>`;
   return newItem;
 }
+getCartContents();
 
 function addCartListener(element) {
   element.addEventListener("click", async function () {

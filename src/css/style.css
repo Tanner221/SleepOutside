@@ -263,7 +263,8 @@ footer {
   display: none;
 }
 .shakeanimation {
-  animation: shake 5s ease-out;
+   animation: shake 5s ease-out;
+   display: badge;
 }
 @keyframes shake {
   25% {
@@ -279,6 +280,23 @@ footer {
     transform: rotate(-15deg);
   }
 }
+<<<<<<< HEAD
+.badge:before.shakeanimation{
+  display:none;
+}
+.badge:after.shakeanimation {
+  content:attr(value);
+  font-size:20px;
+  color: #fff;
+  background: orange;
+  border-radius:50%;
+  padding: 0 5px;
+  position:relative;
+  left:8px;
+  top:-100px;
+  opacity:0.9;
+}
+=======
 
 #product-grid{
   display: grid;
@@ -288,3 +306,4 @@ footer {
   width: 100%;
   height: auto;
 }
+>>>>>>> 4e77eefb9060604c136a3b8afc6f6a2a96e4eb26
