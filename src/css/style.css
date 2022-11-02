@@ -288,3 +288,22 @@ footer {
   width: 100%;
   height: auto;
 }
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.formFieldset {
+  border: black solid 1px;
+  width: 500px;
+}
+.formFieldset > input{
+  display: block;
+  width: 100%;
+}
+button{
+  margin-top: 15px;
+}
+.right-align{
+  float: right;
+}

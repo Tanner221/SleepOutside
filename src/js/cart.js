@@ -8,24 +8,24 @@ async function getLocalStorage(key) {
 
 function displayTotal(total) {
   //display surrounding div (will include checkout button)
-  const element = document.querySelector(".cart-footer");
-  element.style.display = "block";
+  const element = document.querySelector('.cart-footer');
+  element.style.display = 'block';
   //display total
-  const totalElement = document.querySelector("#cart-total");
+  const totalElement = document.querySelector('#cart-total');
   totalElement.innerHTML = `Total: ${total}`;
 }
 
 async function getCartContents() {
-  const cartItems = await getLocalStorage("so-cart");
+  const cartItems = await getLocalStorage('so-cart');
   cartItems.forEach((item) => (item.index = cartItems.indexOf(item)));
   if (cartItems != null) {
     const prices = cartItems.map((item) => item.FinalPrice);
     const total = prices.reduce((partialSum, a) => partialSum + a, 0);
     displayTotal(total);
     const htmlItems = cartItems.map((item) => renderCartItem(item));
-    document.querySelector(".product-list").innerHTML = htmlItems.join("");
+    document.querySelector('.product-list').innerHTML = htmlItems.join('');
   }
-  const buttons = document.querySelectorAll(".cart_remove");
+  const buttons = document.querySelectorAll('.cart_remove');
   buttons.forEach((element) => {
     addCartListener(element);
   });
@@ -52,16 +52,16 @@ function renderCartItem(item) {
 }
 
 function addCartListener(element) {
-  element.addEventListener("click", async function () {
-    const ItemId = this.getAttribute("data_id");
-    const ItemIndex = this.getAttribute("cart_index");
-    let cart = await getLocalStorage("so-cart");
+  element.addEventListener('click', async function () {
+    const ItemId = this.getAttribute('data_id');
+    const ItemIndex = this.getAttribute('cart_index');
+    let cart = await getLocalStorage('so-cart');
     cart.map((CartItem) => {
       if (CartItem.Id == ItemId) {
         const index = cart.indexOf(CartItem);
         if (index == ItemIndex) {
           cart.splice(index, 1);
-          setLocalStorage("so-cart", cart);
+          setLocalStorage('so-cart', cart);
           document.location.reload();
         }
       }
