@@ -177,7 +177,13 @@ button {
 }
 
 .product-detail img {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.divider img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Start cart list card styles */
@@ -280,7 +286,6 @@ footer {
     transform: rotate(-15deg);
   }
 }
-<<<<<<< HEAD
 .badge:before.shakeanimation{
   display:none;
 }
@@ -296,7 +301,6 @@ footer {
   top:-100px;
   opacity:0.9;
 }
-=======
 
 #product-grid{
   display: grid;
@@ -306,4 +310,3 @@ footer {
   width: 100%;
   height: auto;
 }
->>>>>>> 4e77eefb9060604c136a3b8afc6f6a2a96e4eb26
