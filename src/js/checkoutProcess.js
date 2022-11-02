@@ -60,19 +60,16 @@ export default class CheckoutProcess {
   }
 
   async checkout() {
-    const formElement = document.forms['checkout'];
-
-    const json = packageItems(formElement);
+    const formElement = document.getElementById('checkout');
+    const json = await packageItems(formElement);
     // add totals, and item details
     json.orderDate = new Date();
     json.orderTotal = this.orderTotal;
     json.tax = this.tax;
     json.shipping = this.shipping;
-    json.items = await packageItems(this.list);
-    console.log(json);
+    json.items = this.list;
     try {
-      const res = await services.checkout(json);
-      console.log(res);
+      await services.checkout(json);
     } catch (err) {
       console.log(err);
     }
@@ -82,6 +79,7 @@ export default class CheckoutProcess {
 const checkoutPage = new CheckoutProcess('so-cart', '#OrderSummary');
 checkoutPage.init();
 const submitButton = document.getElementById('submitOrder');
-submitButton.addEventListener('click', function(){
+submitButton.addEventListener('click', function(e){
+  e.preventDefault();
   checkoutPage.checkout();
 })
