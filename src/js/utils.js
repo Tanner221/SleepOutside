@@ -67,7 +67,7 @@ export default async function loadHeaderFooter() {
   const head = document.getElementById('main-header');
   const foot = document.getElementById('main-footer');
 
-  console.log(loadHead);
+  //console.log(loadHead);
 
   renderWithTemplate({}, loadHead, head);
   renderWithTemplate({}, loadFoot, foot);
