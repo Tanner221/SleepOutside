@@ -2,6 +2,10 @@ import ExternalServices from './ExternalServices.js';
 
 const services = new ExternalServices();
 
+function setLocalStorage(key, data) {
+  localStorage.setItem(key, JSON.stringify(data));
+}
+
 async function packageItems(items) {
   // convert the list of products from localStorage to the simpler form required for the checkout process. Array.map would be perfect for this.
   const formData = new FormData(items),
@@ -70,8 +74,25 @@ export default class CheckoutProcess {
     json.items = this.list;
     try {
       await services.checkout(json);
+      const successMessage = 'Congradulations, your order has been placed.';
+      const displaySuccess = document.getElementById('SuccessMessage');
+      displaySuccess.innerHTML = successMessage;
+      displaySuccess.style.display = 'block';
+      setLocalStorage('so-cart', {});
+      const inputs = document.querySelectorAll('input');
+      inputs.forEach(input => input.value = '');
     } catch (err) {
-      console.log(err);
+      const message = err.message;
+      const keys = Object.keys(message);
+      const errors = keys.map(key => message[key]);
+      const displayErrors = document.getElementById('ErrorMessages');
+      let html = '<ul>';
+      errors.forEach(error => {
+        html +=  `<li>${error}</li>`;
+      })
+      html += '</ul>';
+      displayErrors.innerHTML = html;
+      displayErrors.style.display = 'block';
     }
   }
 }
@@ -81,5 +102,8 @@ checkoutPage.init();
 const submitButton = document.getElementById('submitOrder');
 submitButton.addEventListener('click', function(e){
   e.preventDefault();
+  document.getElementById('SuccessMessage').style.display = 'none';
+  document.getElementById('ErrorMessages').style.display = 'none';
+
   checkoutPage.checkout();
 })
