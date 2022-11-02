@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sleep Outside | Cart</title>
     <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/main.js" type="module"></script>
     <script src="../js/checkoutProcess.js" type="module"></script>
   </head>
   <body>
-    <header class="divider"></header>
+    <header class="divider" id="main-header"></header>
     <main class="divider">
       <section class="products">
         <h2>Checkout</h2>
+        <p id="SuccessMessage"></p>
+        <p id="ErrorMessages"></p>
         <form name="checkout" id="checkout">
           <fieldset class="formFieldset">
             <legend>Shipping</legend>
@@ -47,6 +50,6 @@
         </form>
       </section>
     </main>
-    <footer>&copy;NOT a real business</footer>
+    <footer id="main-footer"></footer>
   </body>
 </html>

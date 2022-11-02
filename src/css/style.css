@@ -327,3 +327,12 @@ button{
   font-size: .7em;
   margin-right: 5px;
 }
+#ErrorMessages{
+  display: none;
+  color: red;
+}
+
+#SuccessMessage{
+  display: none;
+  color: rgb(65, 210, 65);
+}
