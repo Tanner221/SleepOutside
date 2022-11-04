@@ -13,9 +13,10 @@
           <h3 class="card__brand"></h3>
           <h2 class="card__name"></h2>
           <div class="product-card__price-container">
-          <p class="product-card__price">$</p>
+            <p class="product-card__price">$</p>
             <p class="product-card__discount">$</p>
           </div>
+          <button class="btn-quick-lookup">Quick Lookup</button>
         </a>
       </li>
     </template>
@@ -37,5 +38,25 @@
       </section>
     </main>
     <footer id="main-footer"></footer>
+
+        
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" id="btn-close-modal">&times;</span>
+        <div class="modal-body">
+          <img src="" alt="Image of " class="modal__img"/>
+          <h3 class="modal__brand"></h3>
+          <h2 class="modal__name"></h2>
+          <div class="product-modal__price-container">
+            <p class="product-modal__price">$</p>
+            <p class="product-modal__discount">$</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </body>
 </html>

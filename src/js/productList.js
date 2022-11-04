@@ -68,6 +68,7 @@ export default class ProductList {
     const image = clone.querySelector('img');
     image.src = product.Images.PrimaryMedium;
     image.alt += product.NameWithoutBrand;
+    clone.querySelector('button').dataset.id = product.Id;
     clone.querySelector('h3').innerHTML = product.Brand.Name;
     clone.querySelector('h2').innerHTML = product.NameWithoutBrand;
     clone.querySelector('.product-card__price').innerHTML += product.FinalPrice;
@@ -75,5 +76,9 @@ export default class ProductList {
       product.SuggestedRetailPrice - product.FinalPrice
     ).toFixed(2)} OFF`;
     clone.querySelector('a').href += `${product.Id}&category=tents`;
+  }
+
+  getProductById(id) {
+    return this.products.find(p => p.Id == id);
   }
 }
