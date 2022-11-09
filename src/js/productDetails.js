@@ -52,7 +52,7 @@ export default class ProductDetails {
   addToCart () {
     let currentItems = getLocalStorage('so-cart')
     console.log(currentItems)
-    if (Object.keys(currentItems) != 0) {
+    if (Object.keys(currentItems).length != 0) {
       currentItems.push(this.product)
       setLocalStorage('so-cart', currentItems)
     } else {
