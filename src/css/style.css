@@ -280,7 +280,7 @@ footer {
   }
 }
 
-#product-grid{
+#product-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
@@ -289,7 +289,7 @@ footer {
   height: auto;
 }
 
-form{
+form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -298,17 +298,16 @@ form{
   border: black solid 1px;
   width: 500px;
 }
-.formFieldset > input{
+.formFieldset > input {
   display: block;
   width: 100%;
 }
-button{
+button {
   margin-top: 15px;
 }
-.right-align{
+.right-align {
   float: right;
 }
-
 
 .sub-header {
   display: flex;
@@ -324,15 +323,15 @@ button{
   border: grey solid 1px;
   border-radius: 3px;
   color: blue;
-  font-size: .7em;
+  font-size: 0.7em;
   margin-right: 5px;
 }
-#ErrorMessages{
+#ErrorMessages {
   display: none;
   color: red;
 }
 
-#SuccessMessage{
+#SuccessMessage {
   display: none;
   color: rgb(65, 210, 65);
 }
