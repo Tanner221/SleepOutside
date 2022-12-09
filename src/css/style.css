@@ -24,6 +24,7 @@ body {
 }
 img {
   max-width: 100%;
+  height: auto;
 }
 header {
   display: flex;
@@ -159,6 +160,11 @@ button {
   color: white;
   border-radius: 3px;
   font-size: 0.8em;
+}
+
+.product-card_image {
+  max-width: 250px;
+  height: auto;
 }
 
 .card__brand {
