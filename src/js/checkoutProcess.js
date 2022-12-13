@@ -47,8 +47,8 @@ export default class CheckoutProcess {
   calculateOrdertotal() {
     // calculate the shipping and tax amounts. Then use them to along with the cart total to figure out the order total
     this.shipping = 10;
-    this.shipping += ((this.numItems - 1) * 2);
-    this.tax = this.itemTotal * .06;
+    this.shipping += (this.numItems - 1) * 2;
+    this.tax = this.itemTotal * 0.06;
     this.orderTotal = this.itemTotal + this.shipping + this.tax;
     // display the totals.
     this.displayOrderTotals();
@@ -56,10 +56,18 @@ export default class CheckoutProcess {
   displayOrderTotals() {
     // once the totals are all calculated display them in the order summary page
     let OrderSummary = document.querySelector(this.outputSelector);
-    const results = ` <p>Item Subtotal: <span class='right-align'>$${this.itemTotal.toFixed(2)}</span></p>
-                      <p>Shipping Estimate: <span class='right-align'>$${this.shipping.toFixed(2)}</span></p>
-                      <p>Tax: <span class='right-align'>$${this.tax.toFixed(2)}</span></p>
-                      <p><b>Order Total: <span class='right-align'>$${this.orderTotal.toFixed(2)}</span></b></p>`;
+    const results = ` <p>Item Subtotal: <span class='right-align'>$${this.itemTotal.toFixed(
+      2
+    )}</span></p>
+                      <p>Shipping Estimate: <span class='right-align'>$${this.shipping.toFixed(
+                        2
+                      )}</span></p>
+                      <p>Tax: <span class='right-align'>$${this.tax.toFixed(
+                        2
+                      )}</span></p>
+                      <p><b>Order Total: <span class='right-align'>$${this.orderTotal.toFixed(
+                        2
+                      )}</span></b></p>`;
     OrderSummary.innerHTML = results;
   }
 
@@ -80,16 +88,16 @@ export default class CheckoutProcess {
       displaySuccess.style.display = 'block';
       setLocalStorage('so-cart', {});
       const inputs = document.querySelectorAll('input');
-      inputs.forEach(input => input.value = '');
+      inputs.forEach((input) => (input.value = ''));
     } catch (err) {
       const message = err.message;
       const keys = Object.keys(message);
-      const errors = keys.map(key => message[key]);
+      const errors = keys.map((key) => message[key]);
       const displayErrors = document.getElementById('ErrorMessages');
       let html = '<ul>';
-      errors.forEach(error => {
-        html +=  `<li>${error}</li>`;
-      })
+      errors.forEach((error) => {
+        html += `<li>${error}</li>`;
+      });
       html += '</ul>';
       displayErrors.innerHTML = html;
       displayErrors.style.display = 'block';
@@ -100,10 +108,10 @@ export default class CheckoutProcess {
 const checkoutPage = new CheckoutProcess('so-cart', '#OrderSummary');
 checkoutPage.init();
 const submitButton = document.getElementById('submitOrder');
-submitButton.addEventListener('click', function(e){
+submitButton.addEventListener('click', function (e) {
   e.preventDefault();
   document.getElementById('SuccessMessage').style.display = 'none';
   document.getElementById('ErrorMessages').style.display = 'none';
 
   checkoutPage.checkout();
-})
+});
